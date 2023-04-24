@@ -1,0 +1,10 @@
+SpeechRecognition
+pyttsx3
+pyjokes
+pywhatkit
+wikipedia
+selenium
+PyAudio
+winotify
+AppOpener
+qrcode
