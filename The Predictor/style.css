@@ -1,0 +1,580 @@
+.body{
+    margin: 0;
+    padding: 0;
+  
+}
+::-webkit-scrollbar{
+    display: none;
+}
+
+.front{
+   overflow-x: hidden;
+   overflow-y: hidden;
+    width: 100%;
+    height: 100vh;
+    background-image: url(images/Kundalibackground.png);
+    background-position: center;
+    background-size:cover;
+    position: relative;
+    
+}
+
+.chakra{
+display:block;
+position:absolute;
+top: 50%;
+left: 50%;
+width: 600px;
+height: 600px;
+margin: -280 200 200 -280;
+-webkit-transition: -webkit-transform 3s;
+}
+
+.chakra:hover{
+    -webkit-transform: rotate(360deg) translateZ(0);
+    
+    
+    
+    
+
+}
+.chart{
+    width: 100%;
+    height: 100vh;
+    background-image: url(images/Chart.png);
+    background-position: center;
+    background-size:contain;
+    position:relative;
+}
+.dispchart{
+    display:block;
+position:absolute;
+top: 50%;
+left: 50%;
+width: 760px;
+height: 750px;
+margin: -365 200 200 -380;
+}
+.ombutton{
+display:block;
+position:absolute;
+top: 0%;
+left: 0%;
+width: 100px;
+height: 100px;
+margin: 0 0 0 0;
+
+
+}
+.paper1{
+    display:block;
+    position:fixed;
+    top: 0%;
+    height: 0%;
+    width: 200px;
+    height: 1000px;
+    margin: -120 0 0 -20;
+    z-index: 2; 
+   
+}
+.paper2{
+    display:block;
+    position:fixed;
+    top: 0%;
+    height: 0%;
+    width: 200px;
+    height: 1000px;
+    margin: -120 0 0 1350;
+    z-index: 2;
+   
+}
+.paper3{
+    display:block;
+    position:relative;
+    top: 0%;
+    height: 0%;
+    width: 570px;
+    height: 750px;
+    margin: -50 0 0 -300;
+    z-index: 1; 
+    animation: anina 10s linear ;
+}
+.paper4{
+    display:block;
+    position:relative;
+    top: 0%;
+    height: 0%;
+    width: 570px;
+    height: 750px;
+    margin: -750 0 0 1270;
+    rotate: 180deg;
+    z-index: 1; 
+    animation: anina1 10s linear ;
+}
+.titlemain{
+    position: relative;
+    left: 300px;
+    top: 0%;
+    font-size: 30px;
+    color: brown;
+    background-size: auto;
+    text-shadow:darkred;
+    animation: animate 3s linear infinite;
+    z-index: 1;
+  
+}
+
+.at{
+    display:block;
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    margin: -30 0 0 -30;
+  
+@keyframes animate {
+    0%{
+        color: saddlebrown;
+    }
+    50%
+    {
+        color: brown;
+    }
+}  
+}
+@keyframes anina {
+    0%{
+    margin-left: 180;
+    }
+}
+@keyframes anina1 {
+    0%{
+        margin-left: 820;
+    }
+}
+.shloka{
+    display: block
+}
+.Predictreport{
+    width: 100%;
+    height: 100vh;
+    background-image: url(images/Rockbg.png);
+    background-position: center;
+    background-size:contain;
+    position:relative;
+}
+.Predictpage{
+    display:block;
+position:absolute;
+top: 50%;
+left: 50%;
+width: 700px;
+height: 720px;
+margin: -360 200 200 -550;
+}
+.laychart{
+    display:block;
+position:absolute;
+top: 50%;
+left: 50%;
+width: 500px;
+height: 500px;
+margin: -330 200 200 -240;
+}
+.lagnapart{
+    top: 50%;
+    left: 50%;
+    position:absolute;
+    background-position: center;
+    width: 30px;
+    margin: -150 0 0 -5;
+    background-image: url(Images/Rockbg.png);
+    border-radius: 10px;
+    border-color: black;
+    
+}
+.planetbox{
+    top: 50%;
+    left: 50%;
+    position:absolute;
+    width: 100px;
+    height: 40px;
+    margin: 180 0 0 -35;
+    background-image: url(Images/Rockbg.png);
+    background-size:cover;
+    font-weight: bold;
+    font-size: large;
+    text-align: center;
+    border-color:black;
+    
+
+}
+.Reportsection{
+    display:block;
+position:absolute;
+top: 50%;
+left: 50%;
+width: 450px;
+height: 400px;
+margin: -200 200 200 -400;
+font-size: 20px;
+color:  rgba(255, 208, 121, 0.76);
+overflow: hidden;
+overflow-y: scroll; 
+
+}
+
+.Traitsection{
+    display:block;
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    width: 220px;
+    height: 250px;
+    margin: -250 0 0 180;
+    z-index: 2;
+    font-size: large;
+    overflow: hidden;
+    overflow-y: scroll; 
+    color: rgba(255, 208, 121, 0.76);
+}
+.traitpage{
+    display:block;
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    margin: -320 200 200 100;
+    
+}
+.yogpage{
+    display:block;
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 260px;
+    margin: 50 200 200 100;
+}
+.yogsection{
+    display:block;
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    width: 220px;
+    height: 150px;
+    margin: 100 0 0 180;
+    z-index: 2;
+    font-size: large;
+    overflow: hidden;
+    overflow-y: scroll; 
+    color: gold;
+}
+.planetimage{
+    display:block;
+position:absolute;
+top: 0%;
+left: 0%;
+width: 100px;
+height: 100px;
+margin: 250 200 200 720;
+font-size: 20px;
+}
+
+.FirstHouse{
+    top: 50%;
+    left: 50%;
+    position:absolute;
+    width: 100px;
+    height: 40px;
+    margin: 250 0 0 -335;
+    background-image: url(Images/orangesky.png);
+    background-size:cover;
+    font-weight: bold;
+    font-size: large;
+    text-align: center;
+    border-color:rgb(255, 204, 0); 
+}
+.SecondHouse{
+    top: 50%;
+    left: 50%;
+    position:absolute;
+    width: 100px;
+    height: 40px;
+    margin: 250 0 0 -235;
+    background-image: url(Images/orangesky.png);
+    background-size:cover;
+    font-weight: bold;
+    font-size: large;
+    text-align: center;
+    border-color:rgb(255, 204, 0);  
+}
+.ThirdHouse{
+    top: 50%;
+    left: 50%;
+    position:absolute;
+    width: 100px;
+    height: 40px;
+    margin: 250 0 0 -135;
+    background-image: url(Images/orangesky.png);
+    background-size:cover;
+    font-weight: bold;
+    font-size: large;
+    text-align: center;
+    border-color:rgb(255, 204, 0); 
+}
+.FourthHouse{
+    top: 50%;
+    left: 50%;
+    position:absolute;
+    width: 100px;
+    height: 40px;
+    margin: 250 0 0 -35;
+    background-image: url(Images/orangesky.png);
+    background-size:cover;
+    font-weight: bold;
+    font-size: large;
+    text-align: center;
+    border-color:rgb(255, 204, 0); 
+}
+.FifthHouse{
+    top: 50%;
+    left: 50%;
+    position:absolute;
+    width: 100px;
+    height: 40px;
+    margin: 250 0 0 65;
+    background-image: url(Images/orangesky.png);
+    background-size:cover;
+    font-weight: bold;
+    font-size: large;
+    text-align: center;
+    border-color:rgb(255, 204, 0); 
+}
+.SixthHouse{
+    top: 50%;
+    left: 50%;
+    position:absolute;
+    width: 100px;
+    height: 40px;
+    margin: 250 0 0 165;
+    background-image: url(Images/orangesky.png);
+    background-size:cover;
+    font-weight: bold;
+    font-size: large;
+    text-align: center;
+    border-color:rgb(255, 204, 0); 
+}
+.SeventhHouse{
+    top: 50%;
+    left: 50%;
+    position:absolute;
+    width: 100px;
+    height: 40px;
+    margin: 250 0 0 265;
+    background-image: url(Images/orangesky.png);
+    background-size:cover;
+    font-weight: bold;
+    font-size: large;
+    text-align: center;
+    border-color:rgb(255, 204, 0); 
+}
+.EightHouse{
+    top: 50%;
+    left: 50%;
+    position:absolute;
+    width: 100px;
+    height: 40px;
+    margin: 290 0 0 -235;
+    background-image: url(Images/orangesky.png);
+    background-size:cover;
+    font-weight: bold;
+    font-size: large;
+    text-align: center;
+    border-color:rgb(255, 204, 0); 
+}
+.NinthHouse{
+    top: 50%;
+    left: 50%;
+    position:absolute;
+    width: 100px;
+    height: 40px;
+    margin: 290 0 0 -135;
+    background-image: url(Images/orangesky.png);
+    background-size:cover;
+    font-weight: bold;
+    font-size: large;
+    text-align: center;
+    border-color:rgb(255, 204, 0); 
+}
+.TenthHouse{
+    top: 50%;
+    left: 50%;
+    position:absolute;
+    width: 100px;
+    height: 40px;
+    margin: 290 0 0 -35;
+    background-image: url(Images/orangesky.png);
+    background-size:cover;
+    font-weight: bold;
+    font-size: large;
+    text-align: center;
+    border-color:rgb(255, 204, 0); 
+}
+.ElevenHouse{
+    top: 50%;
+    left: 50%;
+    position:absolute;
+    width: 100px;
+    height: 40px;
+    margin: 290 0 0 65;
+    background-image: url(Images/orangesky.png);
+    background-size:cover;
+    font-weight: bold;
+    font-size: large;
+    text-align: center;
+    border-color:rgb(255, 204, 0); 
+}
+.TwelveHouse{
+    top: 50%;
+    left: 50%;
+    position:absolute;
+    width: 100px;
+    height: 40px;
+    margin: 290 0 0 165;
+    background-image: url(Images/orangesky.png);
+    background-size:cover;
+    font-weight: bold;
+    font-size: large;
+    text-align: center;
+    border-color:rgb(255, 204, 0); 
+}
+
+
+.Sunnum{
+    top: 0%;
+    left: 10%;
+    position:absolute;
+    width: 60px;
+    height: 20px;
+    margin: 120 0 0 255;
+    background-image: url(Images/papersrt.png);
+    font-weight: bold;
+    font-size: large;
+    text-align: center;
+}
+
+.Moonnum{
+    top: 0%;
+    left: 10%;
+    position:absolute;
+    width: 60px;
+    height: 20px;
+    margin: 140 0 0 255;
+    background-image: url(Images/papersrt.png);
+    font-weight: bold;
+    font-size: large;
+    text-align: center;
+}
+
+
+.Mercurynum{
+    top: 0%;
+    left: 10%;
+    position:absolute;
+    width: 60px;
+    height: 20px;
+    margin: 160 0 0 255;
+    background-image: url(Images/papersrt.png);
+    font-weight: bold;
+    font-size: large;
+    text-align: center;
+}
+.Venusnum{
+    top: 0%;
+    left: 10%;
+    position:absolute;
+    width: 60px;
+    height: 20px;
+    margin: 180 0 0 255;
+    background-image: url(Images/papersrt.png);
+    font-weight: bold;
+    font-size: large;
+    text-align: center;
+}
+.Marsnum{
+    top: 0%;
+    left: 10%;
+    position:absolute;
+    width: 60px;
+    height: 20px;
+    margin: 200 0 0 255;
+    background-image: url(Images/papersrt.png);
+    font-weight: bold;
+    font-size: large;
+    text-align: center;
+}
+.Saturnnum{
+    top: 0%;
+    left: 10%;
+    position:absolute;
+    width: 60px;
+    height: 20px;
+    margin: 220 0 0 255;
+    background-image: url(Images/papersrt.png);
+    font-weight: bold;
+    font-size: large;
+    text-align: center;
+}
+.Jupiternum{
+    top: 0%;
+    left: 10%;
+    position:absolute;
+    width: 60px;
+    height: 20px;
+    margin: 240 0 0 255;
+    background-image: url(Images/papersrt.png);
+    font-weight: bold;
+    font-size: large;
+    text-align: center;
+}
+.Rahunum{
+    top: 0%;
+    left: 10%;
+    position:absolute;
+    width: 60px;
+    height: 20px;
+    margin: 260 0 0 255;
+    background-image: url(Images/papersrt.png);
+    font-weight: bold;
+    font-size: large;
+    text-align: center;
+}
+.Ketunum{
+    top: 0%;
+    left: 10%;
+    position:absolute;
+    width: 60px;
+    height: 20px;
+    margin: 280 0 0 255;
+    background-image: url(Images/papersrt.png);
+    font-weight: bold;
+    font-size: large;
+    text-align: center;
+}
+.Genrep{
+    top: 30%;
+    left: 10%;
+    position:absolute;
+    width: 80px;
+    height: 30px;
+    margin: 340 0 0 285;
+    background-image: url(Images/diya\ png.png);
+    background-size:cover;
+    font-weight: bold;
+    font-size: large;
+    text-align: center;
+    border-color:rgb(255, 204, 0); 
+}

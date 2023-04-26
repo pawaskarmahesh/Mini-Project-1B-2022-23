@@ -1,0 +1,90 @@
+<html>
+    <head>
+        <title> The Predictor </title> 
+       
+      <link rel = "stylesheet" href="style.css">
+      <style>
+        body{
+          background-size: cover;
+          background-color: saddlebrown;
+         
+          
+          background-image: url(images/scriptures.png);
+        }
+       
+      </style>
+    </head>
+    <body>
+    
+       <section class ="front" id="Chakraspace">
+        <label class="titlemain">Predictor</label> 
+        <img class="chakra" src="images/swastikad.png">
+        <img class = "paper1" src="images/Kundalibackground1.png">
+        <img class = "paper2" src="images/Kundalibackground1.png">
+        <img class = "paper3" src="images/styled.png">
+        <img class = "paper4" src="images/styled.png">
+        <a class = "at" href="#Chartspace">
+           <img class ="ombutton" src ="images/om.png">
+        </a>
+       </section>
+
+       <section class="chart"id = "Chartspace">
+        <img class="dispchart" src="Images/Kundalibackground.png">
+        <img class="laychart" src="Images/chartlayout.png">
+        <input type="text" name="lagna" class="lagnapart"id ="lagnanpa">
+        <input id="HO1" type="text" name="planetin" class="planetbox">
+        
+        <button  type="submit" name="FirstHouse" class="FirstHouse" onclick="func1(),set1()">1H</button>
+        <button type="submit" name="SecondHouse" class="SecondHouse"onclick="func2()">2H</button>
+        <button type="submit" name="ThirdHouse" class="ThirdHouse" onclick="func3()">3H</button>
+        <button type="submit" name="FourthHouse" class="FourthHouse" onclick="func4()">4H</button>
+        <button type="submit" name="FifthHouse" class="FifthHouse" onclick="func5()">5H</button>
+        <button type="submit" name="SixthHouse" class="SixthHouse" onclick="func6()">6H</button>
+        <button type="submit" name="SeventhHouse" class="SeventhHouse" onclick="func7()">7H</button>
+        <button type="submit" name="EightHouse" class="EightHouse" onclick="func8()">8H</button>
+        <button type="submit" name="NinthHouse" class="NinthHouse" onclick="func9()">9H</button>
+        <button type="submit" name="TenthHouse" class="TenthHouse" onclick="func10()">10H</button>
+        <button type="submit" name="ElevenHouse" class="ElevenHouse" onclick="func11()">11H</button>
+        <button type="submit" name="TwelveHouse" class="TwelveHouse" onclick="func12()">12H</button>
+     
+        <img class="planetimage" id="Sunimage" src="Images/Sun.png">
+        <img class="planetimage" id="Venusimage" src="Images/Venus.png">
+        <img class="planetimage" id="Mercuryimage" src="Images/Mercury.png">
+        <img class ="planetimage" id="Marsimage" src="Images/Mars.png">
+        <img class ="planetimage" id="Jupiterimage" src="Images/Jupiter.png">
+        <img class ="planetimage" id="Saturnimage" src="Images/Saturn.png">
+        <img class ="planetimage" id="Moonimage" src="Images/Moon.png">
+        <img class ="planetimage" id="Rahuimage" src="Images/Rahu.png">
+        <img class ="planetimage" id="Ketuimage" src="Images/Ketu.png">
+
+        <label id = "Sunnum"class="Sunnum">1</label>
+        <label id = "Moonnum"class="Moonnum">2</label>
+        <label id = "Mercurynum" class="Mercurynum">3</label>
+        <label id = "Venusnum"class="Venusnum">4</label>
+        <label id = "Marsnum"class="Marsnum">5</label>
+        <label id = "Saturnnum"class="Saturnnum">6</label>
+        <label id = "Jupiternum"class="Jupiternum">7</label>
+        <label id = "Rahunum" class="Rahunum">8</label>
+        <label id = "Ketunum" class="Ketunum">9</label>
+        
+        <button type="submit" name="Genrep" class="Genrep" onclick="Predict(),location.href='#Predictspace'" >Predict</button>
+       </section>
+       
+       <section class="Predictreport"id = "Predictspace">
+        
+       <img class="Predictpage" src="Images/papersrt.png">
+       <label class = "Reportsection" id="Report"> </label>
+       <img class="traitpage" src="Images/papersrt.png">
+       <label class = "Traitsection" id="Traits"> </label>
+       <img class="yogpage" src="Images/papersrt.png">
+       <label class = "yogsection" id="yog">  </label>
+      </section>
+     
+    </body>
+    
+ <script src="Jaction.js" type="text/javascript"></script>
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.1/html2pdf.bundle.min.js"></script>
+ <script src="pythonact.py"type="text/pythonscript"></script>
+</html>
