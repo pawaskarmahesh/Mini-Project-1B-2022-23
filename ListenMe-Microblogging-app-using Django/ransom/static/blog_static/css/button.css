@@ -1,0 +1,80 @@
+.btn {
+    display: inline-block;
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 28px;
+    /* font-family: Courier New; */
+    font-size: 20px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+  }
+  
+  .btn:hover {
+    background: #ededed;
+    background-image: -webkit-linear-gradient(top, #ededed, #edeff0);
+    background-image: -moz-linear-gradient(top, #ededed, #edeff0);
+    background-image: -ms-linear-gradient(top, #ededed, #edeff0);
+    background-image: -o-linear-gradient(top, #ededed, #edeff0);
+    background-image: linear-gradient(to bottom, #ededed, #edeff0);
+    text-decoration: none;
+  }
+
+.btn-primary{
+    padding-bottom: 0px;
+    margin-left: 200px;
+    background: #00acee;
+    border: none;
+  }
+
+  .btn-primary:hover{
+    background: #18a1d6;
+
+  }
+
+.update-btn{
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Montserrat;
+  color: #000000;
+  font-size: 120%;
+  background: #ffffff;
+  padding: 10px 20px 10px 20px;
+  border: solid #e3e3e3 1px;
+  text-decoration: none;
+}
+
+.update-btn:hover {
+  background: #dae2e6;
+  text-decoration: none;
+}
+
+
+
+.me {
+    color:  #00acee;
+  }
+
+.icon  {
+    padding-right: 8px;
+    color:  #0c0c0c;
+}
+
+.bird{
+    color: rgb(106, 217, 245);
+    /* font-size: 4rem; */
+    margin-left: 14%;
+    margin-right: 2px;
+    padding-right: 0px;
+}
+
+.home a {
+  display: flex;
+  align-items: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .btn a .text {
+    display: none;
+  }
+}

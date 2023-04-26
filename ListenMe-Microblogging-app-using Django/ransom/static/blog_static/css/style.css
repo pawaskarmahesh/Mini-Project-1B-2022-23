@@ -1,0 +1,172 @@
+.nav-item {
+    padding: 0 8px;
+    font-family: "Rubik";
+    font-weight: bold;
+    font-size: large;
+}
+
+.underline{
+  position: relative;
+}
+
+
+.navbar-brand {
+    margin-right: 1px;
+    margin-bottom: 5%;
+    padding-left: 2%;
+    font-weight: bolder;
+    font-size: 1.8rem;
+}
+
+
+.form-control {
+    resize: none;
+    border: solid;
+    border-width: 1px ;
+    border-color: rgb(243, 243, 243) ;
+    border-radius: 40px;
+}
+
+
+
+.tweetf{
+  border: none;
+  border-radius: 0px;
+  max-height: 100px;
+}
+
+
+
+/* profilelist card */
+.card {
+    border: solid;
+    border-width: 1px ;
+    border-color: rgb(228, 228, 228) ;
+    border-radius: 20px;
+}
+.card-header {
+  border-color: rgb(228, 228, 228) ;
+}
+
+
+
+/* navbar  */
+.sidenav {
+  height: 100%;
+  width: 20%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  padding-top: 10px;
+  border-right: solid;
+  border-width: 1px ;
+  border-color: rgb(228, 228, 228) ;
+}
+
+.rightsidenav {
+  width: 23%;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+  /* border-left: solid; */
+  /* border-bottom: solid; */
+  border-width: 1px ;
+  border-color: rgb(228, 228, 228) ;
+}
+
+.profilesidenav {
+display: block;
+  height: 100%;
+  width: 29%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  overflow-x: hidden;
+  padding-top: 40px;
+  border-left: solid;
+  /* border-bottom: solid; */
+  border-width: 1px ;
+  border-color: rgb(228, 228, 228) ;
+}
+
+.sidenav a {
+/* top/right/bottomm/left */
+  padding: 6px 8px 6px 0px; 
+  padding-top: 10px;
+  text-decoration: none;
+  font-family: 'Rubik';
+  font-size: 1rem;
+  color: #000000;
+  display: block;
+}
+
+.sidepad {
+    padding-top: 0%;
+    padding-left: 5%;
+    border-radius: 40px;
+}
+
+.rightsidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  color: #fffdfd;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #269dd4;
+}
+
+.rightsidenav a:hover {
+  color: #f1f1f1;
+}
+
+.main {
+margin-top: 0%; 
+  margin-left: 19.6%; /* Same as the width of the sidenav */
+  padding-right: 30.1%;
+}
+
+.wrapper select,label{
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .sidenav{
+    padding-left: 3%;
+  }
+  body{
+    font-size: 2rem;
+  }
+  .profilesidenav {
+    display: none;
+    width: 0px;
+  }
+  .fronttweets{
+    width: 140%;
+  }
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+  .rightsidenav {padding-top: 15px;}
+  .rightsidenav a {font-size: 18px;}
+}
+
+a {
+  text-decoration: none;
+  color: #000000;
+}
+
+body {
+    font-family: "Rubik";
+    font-size: small;
+    color: black;
+}

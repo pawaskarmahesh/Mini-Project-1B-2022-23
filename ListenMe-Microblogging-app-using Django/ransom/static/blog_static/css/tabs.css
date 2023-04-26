@@ -1,0 +1,31 @@
+
+  .tabs {
+    max-width: 538px;
+  }
+  .tabs-nav li {
+    float: left;
+    width: 50%;
+  }
+  .tabs-nav li:first-child a {
+    border-right: 0;
+    border-top-left-radius: 6px;
+  }
+  .tabs-nav li:last-child a {
+    border-top-right-radius: 6px;
+  }
+
+  .tab-active a {
+    background: #fff;
+    border-bottom-color: transparent;
+    color: #2db34a;
+    cursor: default;
+  }
+  .tabs-stage {
+    border: 1px solid #cecfd5;
+    border-radius: 0 0 6px 6px;
+    border: 0;
+    clear: both;
+    padding: 24px 30px;
+    position: relative;
+    top: -1px;
+  }

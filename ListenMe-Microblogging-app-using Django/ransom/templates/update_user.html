@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- Button trigger modal -->
+
+<div class="col-md-6 offset-md-3">
+<h1>Update User</h1>
+
+<br><br><br>
+<form method="POST" action="" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{user_form.as_p}}
+    <div class="form-group">
+        <label for="{{ profile_form.bio.id_for_label }}">Bio</label>
+        {{ profile_form.bio }}
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>
+</div>
+
+{% endblock %}

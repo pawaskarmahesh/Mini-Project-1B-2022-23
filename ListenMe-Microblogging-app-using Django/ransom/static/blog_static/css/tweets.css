@@ -1,0 +1,79 @@
+
+.avator {
+    border-radius:100px;
+    width:48px;
+    margin-right: 15px;
+  }
+  
+  .bold{
+    
+  }
+  
+  .tweet-wrap {
+    max-width:auto;
+    background: #fff;
+    margin: 0 auto;
+    margin-top: 1px;
+    border-radius:3px;
+    padding: 30px;
+    border-bottom: 1px solid #e6ecf0;
+    border-top: 1px solid #e6ecf0;
+    box-shadow: 0px 10px 15px rgba(0,0,0,0.1);
+  }
+  
+  .tweet-header {
+    display: flex;
+    align-items:flex-start;
+    font-size:14px;
+  }
+  .tweet-header-info {
+    font-weight:bold;
+  }
+  .tweet-header-info span{
+    color:#657786;
+    font-weight:normal;
+    margin-left: 5px;
+  }
+  .tweet-header-info p {
+    font-weight:normal;
+    margin-top: 5px;
+    
+  }
+  .tweet-img-wrap {
+    padding-left: 60px;
+  }
+  
+  .tweet-info-counts {
+    display: flex;
+    margin-left: 60px;
+    margin-top: 10px;
+  }
+
+  .bold{
+    font-weight: bold;
+  }
+
+
+  @media screen and (max-width:430px){
+    body {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    .tweet-header {
+      flex-direction:column;
+    }
+    .tweet-header img {
+      margin-bottom: 20px;
+    }
+  
+    .tweet-img-wrap {
+      padding-left: 0;
+    }
+    .tweet-info-counts {
+    display: flex;
+    margin-left: 0;
+  }
+  .tweet-info-counts div {
+    margin-right: 10px;
+  }
+  }

@@ -1,0 +1,168 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<nav class="navbar navbar-expand-lg navbar-light underline">
+    <a class="navbar-brand" href="#">Profile</a>
+
+</nav>
+
+<div class="profilesidenav" style="padding-top: 120px; display: block; margin: auto;">
+    <div style="padding-left: 12px;padding-right: 12px;">
+
+
+
+
+        <div class="card" style="text-align: center;">
+            <h5 class="card-header">Follows</h5>
+            <div class="card-body" style="max-height: 200px; overflow-y: auto;">
+                {% for following in profile.follow.all %}
+                {% if following.profile_image %}
+                {% if following.user != profile.user %}
+                <div class="tweet-wrap">
+                    <div class="tweet-header">
+                        <img src="{{following.profile_image.url}}" style="height: 60px;width: 60px;"
+                            alt="{{following.user.username}}" style="padding-right: 4%;" class="avator">
+                        <div class="tweet-header-info">
+                            <a href="{% url 'profile' following.user.id %}" class="following">@{{following}}<br></a>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                {% else %}
+                {% if following.user != profile.user %}
+                <div class="tweet-wrap">
+                    <div class="tweet-header">
+                        <img src="{% static 'images/default_profile_pic.jpg' %}" style="height: 60px;width: 60px;
+                            font-weight: bolder; color: black;font-size: 1.2rem;" alt="{{following.user.username}}"
+                            style="padding-right: 4%;" class="avator">
+
+                        <div class="tweet-header-info">
+                            <a href="{% url 'profile' following.user.id %}" class="following">@{{following}}<br></a>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+
+        <br>
+        <div class="card" style="text-align: center;">
+            <h5 class="card-header">Followed By</h5>
+            <div class="card-body" style="max-height: 200px; overflow-y: auto;">
+                {% for follower in profile.followed_by.all %}
+                {% if follower.profile_image %}
+                {% if follower.user != profile.user %}
+                <div class="tweet-wrap">
+                    <div class="tweet-header">
+                        <img src="{{follower.profile_image.url}}" style="height: 60px;width: 60px;
+                                    font-weight: bolder; color: black;font-size: 1.2rem;"
+                            alt="{{follower.user.username}}" class="avator">
+                        <div class="tweet-header-info">
+                            <a href="{% url 'profile' follower.user.id %}">@{{follower}}<br></a>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                {% else %}
+                {% if follower.user != profile.user %}
+                <div class="tweet-wrap">
+                    <div class="tweet-header">
+                        <img src="{% static 'images/default_profile_pic.jpg' %}" style="height: 60px;width: 60px;
+                                        font-weight: bolder; color: black;font-size: 1.2rem;"
+                            alt="{{follower.user.username}}" class="avator">
+                        <div class="tweet-header-info">
+                            <a href="{% url 'profile' follower.user.id %}">@{{follower}}<br></a>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+
+        <br>
+        <br>
+    </div>
+</div>
+
+
+{% if profile %}
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="profile-header">
+                <div class="profile-info profileimg">
+                    {% if profile.profile_image %}
+                    <img src="{{profile.profile_image.url}}"></img>
+                    {% else %}
+                    <img src="{% static 'images/default_profile_pic.jpg' %}"
+                        style="height: 30%;width: 30%;border-radius: 100%;">
+                    {% endif %}
+
+                </div>
+                {% if request.user.id != profile.user.id %}
+                <form method="POST" style="padding-left: 80px;">
+                    {% csrf_token %}
+                    {% if profile in user.profile.follow.all %}
+                    <button class="btn btn-outline-secondary btn-block" name="follow" value="unfollow"
+                        type="submit">Unfollow</button>
+                    {% else %}
+                    <button class="btn btn-outline-secondary btn-block" name="follow" value="follow"
+                        type="submit">Follow</button>
+                    {% endif %}
+                </form>
+                {% endif %}
+                {% if request.user.id == profile.user.id %}
+                <a href="{% url 'update_user' %}" class="btn update-btn"> EDIT </a>
+                {% endif %}
+            </div>
+            <h2>{{profile.user.username}}'s Profile</h2>
+            <p>Joined {{ profile.date_modified }}</p>
+            <p>• {{ profile.bio }}</p>
+            <table>
+                <tr>
+                    <th style="padding-right: 10px;">{{ profile.get_followers_count }} followers</th>
+                    <th>{{ profile.get_following_count }} following</th>
+                </tr>
+            </table>
+            <hr>
+
+            {% if meeps %}
+            {% for meep in meeps %}
+            <div class="tweet-wrap">
+                <div class="tweet-header">
+                    {% if profile.profile_image %}
+                    <img src="{{profile.profile_image.url}}" style="height: 60px;width: 60px;" alt="{{profile.user.username}}"
+                        style="padding-right: 4%;" class="avator">
+                    {% else %}
+                    <img src="{% static 'images/default_profile_pic.jpg' %}" style="height: 60px;width: 60px;" alt="{{profile.user.username}}"
+                        style="padding-right: 4%;" class="avator">
+                    {% endif %}
+                    <div class="tweet-header-info">
+                        <span style="font-weight: bolder; color: black;font-size: 1.2rem;">{{ meep.user.username }}</span>
+                        <span> ({{ meep.created_at }}) </span>
+                        <p style="font-size: 1rem;">{{meep.body}}</p>
+                        <span class="like-count">{{ meep.likes.count }} likes</span>
+                        {% if meep.user == request.user %}
+                        <form action="{% url 'delete_meep' meep.id %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit" class="btn update-btn" style="margin-top: 2px;">Delete</button>
+                        </form>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            {% endif %}
+
+            </div>
+        </div>
+    </div>
+</div>
+    {% endif %}
+    {% endblock %}

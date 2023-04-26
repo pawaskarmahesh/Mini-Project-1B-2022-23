@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<nav class="navbar navbar-expand-lg navbar-light underline"
+    style="border-bottom: solid;border-color: rgb(255, 255, 255);border-width: 1px;margin-bottom: 3px;">
+    <a class="navbar-brand" href="#">HOME</a>
+</nav>
+
+<!-- 2/2/2023 -->
+<div class="profilesidenav" style="padding-top: 120px; display: block; margin: auto;">
+<!-- emyty for now  -->
+</div>
+
+<!-- close 2/2/2023 -->
+{% if form %}
+<div class="wrapper">
+    <div class="input-box">
+        <form method="POST" class="tweetf">
+            {% csrf_token %}
+            {{form.as_p}}
+    </div>
+    <div class="bottom">
+      <div class="content">
+        <button type="submit">Post</button>
+      </div>
+    </div>
+</form>
+  </div>
+{% endif %}
+
+{% for meep in meeps %}
+<div class="tweet-wrap">
+    <div class="tweet-header">
+        {% if meep.user.profile.profile_image %}
+        <img src="{{meep.user.profile.profile_image.url}}" style="height: 60px;width: 60px;"
+            alt="{{profile.user.username}}" style="padding-right: 4%;" class="avator">
+
+        <div class="tweet-header-info">
+            <a href="{% url 'profile' meep.user.id %}"><span style="font-weight: bolder; color: black;
+            font-size: 1.2rem;">{{ meep.user.username }}</span></a>
+
+        {% else %}
+
+        <img src="{% static 'images/default_profile_pic.jpg' %}" style="height: 60px;width: 60px;
+        font-weight: bolder; color: black;font-size: 1.2rem;"
+        alt="{{profile.user.username}}" style="padding-right: 4%;" class="avator">
+
+        <div class="tweet-header-info">
+            <a href="{% url 'profile' meep.user.id %}"><span  style="font-weight: bolder; color: black;
+                font-size: 1.2rem;">{{ meep.user.username }}</span></a> 
+
+        {% endif %}
+
+                <span> ({{ meep.created_at }}) </span>
+            <p style="font-size: 1rem;">{{meep.body}}</p>
+            {% if user.is_authenticated %}
+                <div class="tweet-footer">
+                    <form method="post" action="{% url 'like_meep' %}">
+                        {% csrf_token %}
+                        <input type="hidden" name="meep_id" value="{{ meep.id }}">
+                        <input type="hidden" name="like_btn" value="{{ meep.id }}">
+                        <span class="like-count">{{ meep.likes.count }}
+                        <button type="submit" class="btn update-btn" style="border: none;"><i class="fa-regular fa-thumbs-up"></i></button>
+                        </span>
+                    </form>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+{% endblock %}
