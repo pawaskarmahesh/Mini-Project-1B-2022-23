@@ -1,0 +1,71 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/authentication/css/signin.css">
+
+    <title>Animation Login</title>
+</head>
+
+<body>
+
+            {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+            <strong>Message:</strong> {{ message }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times</span>
+            </button>
+            </div>
+            {% endfor %}
+
+    <div class="box">
+        <form action="/signin" method="post">
+            {% csrf_token %}
+            <h2>Log In</h2>
+            <div class="inputBox">
+                <input type="text" name="username" required  >
+                <span>Username</span>
+                <i></i>
+            </div>
+            <div class="inputBox">
+                <input type="password" name="password" required >
+                <span>Password</span>
+                <i></i>
+            </div>
+            <div class="links">
+                <a href="/signup">Sign up</a>
+            </div>
+            <center>
+            <input type="submit" value="Login">
+                </center>
+                <br>
+            <center>
+                {% load socialaccount %}
+                <a href="{% url 'social:begin' 'google-oauth2' %}">
+                 <div class="google">
+                         <img src="static/authentication/images/Googlee.jpg" class="google" width="18">
+                     <div>  Sign in with Google</div>
+                 </div>
+                    </a>
+
+
+                </center>
+
+
+        </form>
+
+
+
+
+
+
+    </div>
+</body>
+
+</html>

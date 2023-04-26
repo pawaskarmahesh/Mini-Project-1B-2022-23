@@ -1,0 +1,218 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="static/authentication/css/style1.css">
+    <link rel="stylesheet" href="static/authentication/css/navbar2.css">
+</head>
+<body style="background-color:#d5eef0;">
+
+           {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+            <strong>Message:</strong> {{ message }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times</span>
+            </button>
+            </div>
+            {% endfor %}
+
+
+
+    <header >
+        <h1>E-Career-Care</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <div class="dropdown">
+  <button>Categories</button>
+  <div class="dropdown-options">
+    <a href="/tenth">Career 10th</a>
+    <a href="/science">Career 12th Science</a>
+    <a href="/commerce">Career 12th Commerce</a>
+      <a href="/arts">Career 12th Arts</a>
+
+  </div>
+</div>
+
+
+<!--            <li><a href="#tenth">Career-10th</a></li>-->
+<!--            <li><a href="#Sci">Career-12th-Sci</a></li>-->
+<!--            <li><a href="#commerce">Career-12th-Com</a></li>-->
+<!--            <li><a href="#arts">Career-12th-Arts</a></li>-->
+            <li><a href="#">Book</a></li>
+            <li><a href="#footer">Contacts</a></li>
+
+
+            {% if user.is_authenticated %}
+<!--            <h3>Hello {{ username }}</h3>-->
+<!--            <h4>You're successfully logged in.</h4>-->
+
+            <li id="logout"><a href="/signout">Signout</a></li>
+            {% else %}
+
+            <li id="login"><a href="/signin">Login</a></li>
+            {% endif %}
+
+
+
+
+        </ul>
+    </nav>
+    <hr>
+    <section id="banner">
+        <div id="about">
+            <!--About us part -->
+            <img src="/static/authentication/images/aboutus.png" height="300" alt="Career image" class="img"/>
+            <h2>Caring Career means Growing Career</h2>
+            <br>
+            <p>Our Website helps you to choose a correct path for your future Career and also give you the knowledge about various opportunites present in your field and also the guidance to grab those opportunites.</p>
+        </div>
+        <br>
+        <hr>
+        <div id="tenth">
+            <!--Query for 10th part-->
+            <img src="static/authentication/images/student (2).png" height="250" alt="student" class="img"/>
+            <h2>What to do After 10<sup>th</sup> ? </h2>
+            <br>
+            <p>Completed your 10th but confused about whether should you take Science , Commerce or Arts ?</p>
+            <p>Then you have come at right place. Here we guide you about which stream you should take acccording to your interest and capabilities along with the detailed information about every stream.</p>
+            <a href="/tenth" id="explore10th">
+                <button style="height: 50px; width: 150px; font-size: 20px; margin-left: -40px; padding: auto; background-color: aqua; border-radius: 50px; border: 2px solid #ffffff ">Explore </button>
+              </a>
+        </div>
+        <hr>
+        <div id="Sci">
+            <!--Query for 12th Science-->
+            <img src="static/authentication/images/Science.jpg" height="250"  alt="Science" class="img"/>
+            <h2>What After 12<sup>th</sup> Science ? </h2>
+            <p>Purcuing your 12th in science but don't know what to do next ?</p>
+            <p>Then know what to do next by simply exploring our website. Here you can get detailed anaylsis about the various opportunites available after 12th in Science stream with the guided path to acheive them.</p>
+            <a href="/science" id="explore10th">
+                <button style="height: 50px; width: 150px; font-size: 20px; margin-left: -140px; padding: auto; background-color: aqua; border-radius: 50px; border: 2px solid #ffffff ">Explore </button>
+              </a>
+<!--            <marquee width="100%" direction="right" height="100px">-->
+<!--                <img src="static/authentication/images/movsci.png" height="100px" style="border-radius: 20px;"/>-->
+<!--            </marquee>-->
+        </div>
+        <hr>
+        <div id="commerce">
+            <!--Query for 12h Commerce-->
+            <img src="static/authentication/images/commerce.jpg" height="250" alt="Commerce" class="img"/>
+            <h2>What After 12<sup>th</sup> Commerce ? </h2>
+            <p>Purcuing your 12th in Commerce but don't know what to do next ?</p>
+            <p>Then know what to do next by simply exploring our website. Here you can get detailed anaylsis about the various opportunites available after 12th in Commerce stream with the guided path to acheive them.</p>
+            <a href="/commerce" id="explore10th">
+                <button style="height: 50px; width: 150px; font-size: 20px; margin-left: -140px; padding: auto; background-color: aqua; border-radius: 50px; border: 2px solid #ffffff ">Explore </button>
+              </a>
+        </div>
+        <hr>
+        <div id="arts">
+            <!--Query for 12h Arts-->
+            <img src="static/authentication/images/Arts.png" height="250" alt="Arts" class="img"/>
+            <h2>What After 12<sup>th</sup> Arts ? </h2>
+            <p>Purcuing your 12th in Arts but don't know what to do next ?</p>
+            <p>Then know what to do next by simply exploring our website. Here you can get detailed anaylsis about the various opportunites available after 12th in Arts stream with the guided path to acheive them.</p>
+            <a href="/arts" id="explore10th">
+                <button style="height: 50px; width: 150px; font-size: 20px; margin-left: -140px; padding: auto; background-color: aqua; border-radius: 50px; border: 2px solid #ffffff ">Explore </button>
+              </a>
+        </div>
+    </section>
+
+
+<!--    <section class="footer">-->
+<!--        <div class="box-container">-->
+<!--            <div class="box">-->
+<!--                <h3>Quick links</h3>-->
+<!--                <a href="#home">Home</a>-->
+<!--                <a href="#About">About</a>-->
+<!--                <a href="#tenth">Career-10th</a>-->
+<!--                <a href="#Sci">Career-12th-Sci</a>-->
+<!--                <a href="#commerce">Career-12th-Com</a>-->
+<!--                <a href="#arts">Career-12th-Arts</a>-->
+<!--                <a href="#">Login</a>-->
+<!--            </div>-->
+<!--            <div class="box">-->
+<!--                <h3>Our Services</h3>-->
+<!--                <a href="#">Dosha Checker</a>-->
+<!--                <a href="#">Yoga</a>-->
+<!--            </div>-->
+
+<!--            <div class="box">-->
+<!--                    <h3>Contact info</h3>-->
+<!--                    <a href="#"> +91-9867 091 698</a>-->
+<!--                    <a href="#">+91-8169 439 867</a>-->
+<!--                    <a href="#">atul.mg91413@gmail.com</a>-->
+<!--                    <a href="#">cajay8433@gmail.com</a>-->
+<!--                    <a href="#">Thane, INDIA - 400610 </a>-->
+<!--            </div>-->
+
+<!--            <div class="box">-->
+<!--                    <h3>Follow Us</h3>-->
+<!--                    <a href="#">facebook</a>-->
+<!--                    <a href="#">twitter</a>-->
+<!--                    <a href="#">instagram</a>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div id="credit"> Created by <span>Atul Gupta , Siddesh Dige , Ajay Chaurasiya and Amil Gauri</span> | APSIT </div>-->
+<!--    </section>-->
+
+<!--<section class="footer">-->
+
+<!--    <div class="box-container">-->
+
+<!--        <div class="box">-->
+<!--            <h3>quick links</h3>-->
+<!--            <a href="#"> <i class="fas fa-chevron-right"></i> home </a>-->
+<!--            <a href="#"> <i class="fas fa-chevron-right"></i> health </a>-->
+<!--            <a href="#"> <i class="fas fa-chevron-right"></i> about </a>-->
+<!--            <a href="#"> <i class="fas fa-chevron-right"></i> suggestion </a>-->
+<!--            <a href="#"> <i class="fas fa-chevron-right"></i> book </a>-->
+<!--            <a href="#"> <i class="fas fa-chevron-right"></i> blog </a>-->
+
+<!--        </div>-->
+
+<!--        <div class="box">-->
+<!--            <h3>our services</h3>-->
+<!--            <a href="#"> <i class="fas fa-chevron-right"></i> ayurveda </a>-->
+<!--            <a href="#"> <i class="fas fa-chevron-right"></i> stress releaf </a>-->
+<!--            <a href="#"> <i class="fas fa-chevron-right"></i> workout </a>-->
+<!--            <a href="#"> <i class="fas fa-chevron-right"></i> yoga </a>-->
+
+<!--        </div>-->
+
+<!--        <div class="box">-->
+<!--            <h3>contact info</h3>-->
+<!--            <a href="#"> <i class="fas fa-phone"></i> +91-9867 091 698 </a>-->
+<!--            <a href="#"> <i class="fas fa-phone"></i> +91-8169 439 867 </a>-->
+<!--            <a href="#"> <i class="fas fa-envelope"></i> atul.mg91413@gmail.com </a>-->
+<!--            <a href="#"> <i class="fas fa-envelope"></i> cajay8433@gmail.com </a>-->
+<!--            <a href="#"> <i class="fas fa-map-marker-alt"></i> thane, INDIA - 400610 </a>-->
+<!--        </div>-->
+
+<!--        <div class="box">-->
+<!--            <h3>follow us</h3>-->
+<!--            <a href="#"> <i class="fab fa-facebook-f"></i> facebook </a>-->
+<!--            <a href="#"> <i class="fab fa-twitter"></i> twitter </a>-->
+<!--            <a href="#"> <i class="fab fa-twitter"></i> twitter </a>-->
+<!--            <a href="#"> <i class="fab fa-instagram"></i> instagram </a>-->
+
+<!--        </div>-->
+
+<!--    </div>-->
+
+<!--    <div class="credit"> created by <span>Ajay,Atul,Amil and Siddesh</span> | APSIT </div>-->
+
+<!--</section>-->
+
+<div id="credit"> Created by <span>Atul Gupta , Siddesh Dige , Ajay Chaurasiya and Amil Gauri</span> | APSIT </div>
+
+</body>
+</html>

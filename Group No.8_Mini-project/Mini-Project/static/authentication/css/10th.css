@@ -1,0 +1,70 @@
+
+/* Styles for the header section */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  nav ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+  }
+
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  nav ul li a:hover {
+    background-color: #fff;
+    color: #333;
+  }
+
+  /* Styles for the main section */
+  main {
+    margin: 20px;
+  }
+
+  section {
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    color: #333;
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  li {
+    margin-bottom: 5px;
+  }
+
+  /* Styles for the footer section */
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+  }
+
+  /* Styles for the image */
+  img {
+    width: 400px
+    height: 300px
+    border: 2px solid #ff3d0036;
+    margin: 10px;
+
+
+
+}

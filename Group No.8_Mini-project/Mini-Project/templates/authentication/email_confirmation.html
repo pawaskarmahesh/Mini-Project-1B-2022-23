@@ -1,0 +1,13 @@
+
+{% autoescape off %}
+
+Welcome to E-career care Login
+
+Hello {{ name }} !
+
+Please confirm your email by clicking on the following link.
+
+Confirmation Link: http://{{ domain }}{% url 'activate' uidb64=uid token=token %}
+
+
+{% endautoescape %}

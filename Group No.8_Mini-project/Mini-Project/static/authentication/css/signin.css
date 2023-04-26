@@ -1,0 +1,193 @@
+
+
+@import url(' https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+  /*@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');*/
+ /* font-family: 'Oswald', sans-serif;*/
+
+
+    * {
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        flex-direction: column;
+        background: #d1e8f5;
+    }
+
+    .box {
+        position: relative;
+        width: 380px;
+        height: 460px;
+        background: #d5eef0;
+        border-radius:8px;
+        overflow: hidden;
+    }
+
+    .box::before {
+        content: '';
+        z-index: 1;
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 380px;
+        height: 420px;
+        transform-origin:bottom right;
+        background:linear-gradient(0deg, transparent, #291cdbe5, #291cdbe5);
+        animation: animate 6s linear infinite;
+    }
+
+    .box::after {
+        content: '';
+        z-index: 1;
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 380px;
+        height: 420px;
+        transform-origin:bottom right;
+        background:linear-gradient(0deg, transparent, #291cdbe5, #291cdbe5);
+        animation: animate 6s linear infinite;
+        animation-delay: -3s;
+    }
+
+    @keyframes animate {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    form {
+        position: absolute;
+        inset: 2px;
+        background: hwb(24 95% 3%);
+        padding: 50px 40px;
+        border-radius: 8px;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+    }
+
+    h2 {
+        color:#2a54dde5;
+        font-weight: 500;
+        text-align: center;
+        letter-spacing: 0.1em;
+    }
+
+    .inputBox {
+        position: relative;
+        width: 300px;
+        margin-top: 35px;
+    }
+
+    .inputBox input {
+        position: relative; width: 100%; padding: 20px 10px 10px; background: transparent; outline: none; border: none;
+        color: #23242a; font-size: 1em; letter-spacing: 0.05em; transition: 0.5s; z-index: 10;
+    }
+
+    .inputBox span {
+        position: absolute; left: 0; padding: 20px 0px 10px; pointer-events: none; font-size: 1em; color: #8f8f8f;
+        letter-spacing: 00.05em; transition: 0.5s;
+    }
+
+    .inputBox input:valid ~ span,
+    .inputBox input:focus ~ span {
+        color: #291cdbe5; transform: translateX(0px) translateY(-34px); font-size: 0.75em;
+    }
+
+    .inputBox i {
+        position: absolute; left: 0; bottom: 0; width: 100%; height: 2px; background:#291cdbe5;
+        border-radius: 4px;
+        overflow: hidden;
+        pointer-events: none;
+        z-index: 9;
+        transition: 0.5s;
+    }
+
+    .inputBox input:valid ~i,
+    .inputBox input:focus ~i {
+        height: 44px;
+    }
+
+    .links {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .links a {
+        margin: 10px 0px;
+        font-size: 0.75em;
+        color: #8f8f8f;
+        text-decoration: beige;
+    }
+
+    .links a:hover,
+    .links a:nth-child(2) {
+        color:#291cdbe5;
+    }
+
+    input[type="submit"] {
+
+        border: none;
+        outline: none;
+        padding: 11px 30px;
+        background: #291cdbe5;
+
+        cursor: pointer;
+        border-radius: 4px;
+        font-weight: 600;
+        width: 250px;
+        margin-top: 10px;
+    }
+
+    input[type="submit"]:active {
+        opacity: 0.8;
+    }
+
+.btn
+{
+
+border: 1px solid #000000;
+ padding: 8px 20px;
+ border-radius: 4px;
+ background: #ffffff;
+ position: relative;
+ font-size: 14px;
+
+ cursor: pointer;
+        border-radius: 4px;
+        font-weight: 600;
+        width: 250px;
+        margin-top: 10px;
+
+}
+
+.google
+{
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: row;
+column-gap: 10px;
+
+
+
+}
+
+a
+{
+text-decoration: none;
+color: black;
+}
