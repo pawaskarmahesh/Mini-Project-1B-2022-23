@@ -48,6 +48,7 @@ I hope that this project will serve as a
 valuable resource for anyone interested in learning more about microblogging and the process of 
 building a customized solution
 
-project team <br>
+## Created By <br>
+Rahil Shaikh: https://github.com/Mihaillo29 <br>
 Tejal Deshmukh: https://github.com/Tejalhatt <br>
 Gauri Gandhi: https://github.com/Candyxoxo
