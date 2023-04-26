@@ -1,4 +1,4 @@
-# ListenMe-Twitter-like-Microblogging-app-Using-Django
+# ListenMe-Microblogging-app-Using-Django
 We created a microblogging app in Django for a university project to understand microblogging logic. Our app explores key features like user registration, tweeting, following, likes, counts, editing profiles, and displaying pictures.
 
 >**_While our project was not intended for public deployment or hosting, we believe that it represents a 
