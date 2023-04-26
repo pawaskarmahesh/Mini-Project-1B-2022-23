@@ -1,0 +1,41 @@
+{% extends 'company_navbar.html' %}
+
+{% block title %} Admission System {% endblock %}
+{% block application_form %} active {% endblock %}
+{% block css %}
+{% endblock %}
+{% block body %}
+<form class="container mt-3" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <div class="row">
+        <div class="form-group col-md-12">
+            <label>Job Title</label>
+            <input type="text" class="form-control mt-1" name="job_title" id="job_title" value="{{job.title}}" readonly>
+        </div>
+    </div>
+    
+    <div class="row mt-3">
+        <div class="form-group col-md-12">
+            <img src="{{job.image.url}}" alt="" width="150px" height="100px">
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="form-group col-md-12">
+            <label>Company Logo</label>
+            <input type="file" class="form-control mt-2" name="logo" id="logo">
+        </div>
+    </div>
+
+<input type="submit" value="Submit" class="btn btn-primary mt-2">
+</form>
+{% endblock %}
+{% block js %}
+<script>
+    {% if alert %}
+    alert("Your company logo has been updated successfully.")
+    window.location = "/job_list"
+    {% endif %}
+</script>
+{% endblock %}
+

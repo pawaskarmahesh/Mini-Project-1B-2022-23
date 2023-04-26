@@ -1,0 +1,42 @@
+{% extends 'admin_navbar.html' %}
+
+{% block title %} All Companies {% endblock %}
+{% block application_form %} active {% endblock %}
+{% block css %}
+{% endblock %}
+{% block body %}
+<div class="container mt-4">
+<table class="table table-hover" id="example">
+    <thead>
+        <tr>
+            <th>Sr.No</th>
+            <th>Full Name</th>
+            <th>Email Id</th>
+            <th>Contact</th>
+            <th>Gender</th>
+            <th>Company Name</th>
+            <th>Image</th>
+            <th>Status</th>
+            <th>Change Status</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for company in companies %}
+        <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{company.user.get_full_name}}</td>
+            <td>{{company.user.email}}</td>
+            <td>{{company.phone}}</td>
+            <td>{{company.gender}}</td>
+            <td>{{company.company_name}}</td>
+            <td><img src="{{company.image.url}}" class="rounded-circle" width="90px" height="70px"></td>
+            <td>{{company.status}}</td>
+            <td><a href="/change_status/{{company.id}}/" class="btn btn-secondary">Change Status</a></td>
+            <td><a href="/delete_company/{{company.user.id}}/" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this company?')">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+{% endblock %}

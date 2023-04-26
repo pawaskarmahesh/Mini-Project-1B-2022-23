@@ -1,0 +1,36 @@
+{% extends 'admin_navbar.html' %}
+
+{% block title %} All Applicants {% endblock %}
+{% block view_applicants %} active {% endblock %}
+{% block css %}
+{% endblock %}
+{% block body %}
+<div class="container mt-4">
+<table class="table table-hover" id="example">
+    <thead>
+        <tr>
+            <th>Sr.No</th>
+            <th>Full Name</th>
+            <th>Email Id</th>
+            <th>Contact</th>
+            <th>Gender</th>
+            <th>Image</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for applicant in applicants %}
+        <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{applicant.user.get_full_name}}</td>
+            <td>{{applicant.user.email}}</td>
+            <td>{{applicant.phone}}</td>
+            <td>{{applicant.gender}}</td>
+            <td><img src="{{applicant.image.url}}" class="rounded-circle" width="90px" height="70px"></td>
+            <td><a href="/delete_user/{{applicant.user.id}}/" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this applicant?')">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+{% endblock %}

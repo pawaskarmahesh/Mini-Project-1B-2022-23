@@ -1,0 +1,80 @@
+{% extends 'basic.html' %}
+
+{% block title %} Company Signup {% endblock %}
+{% block company_login %} active {% endblock %}
+{% block css %}
+{% endblock %}
+{% block body %}
+<form class="container mt-4" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <div class="row">
+        <div class="form-group col-md-6">
+            <label>First Name</label>
+            <input type="text" class="form-control" name="first_name" id="first_name" placeholder="Enter First Name">
+        </div>
+        <div class="form-group col-md-6">
+            <label>Last Name</label>
+            <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Enter Last Name">
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="form-group col-md-12">
+            <label>Username</label>
+            <input type="text" class="form-control" name="username" id="username" placeholder="Enter Username">
+        </div>
+    </div>
+    
+    <div class="row mt-4">
+        <div class="form-group col-md-6">
+            <label>Password</label>
+            <input type="password" class="form-control" name="password1" id="password1" placeholder="Enter Password">
+        </div>
+        <div class="form-group col-md-6">
+            <label>Confirm Password</label>
+            <input type="password" class="form-control" name="password2" id="password2" placeholder="Confirm Password">
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="form-group col-md-6">
+            <label>Email Id</label>
+            <input type="email" class="form-control" name="email" id="email" placeholder="Enter Email Id">
+        </div>
+        <div class="form-group col-md-6">
+            <label>Contact Number</label>
+            <input type="tel" class="form-control" name="phone" id="phone" placeholder="Enter Contact Number">
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="form-group col-md-6">
+            <label>Gender</label>
+            <div style="border: 1px solid lightgrey; padding: 5px; border-radius: 6px;">
+            <div class="form-check form-check-inline">
+                <input type="radio" class="custom-control-input" name="gender" id="male" value="Male">
+                <label for="male" class="custom-control-label">Male</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input type="radio" class="custom-control-input" name="gender" id="female" value="Female">
+                <label for="female" class="custom-control-label">Female</label>
+            </div>
+        </div>
+        </div>
+        <div class="form-group col-md-6">
+            <label>Logo of the Company</label>
+            <input type="file" class="form-control" name="image" id="image" placeholder="Enter Last Name">
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="form-group col-md-12">
+            <label>Company Name</label>
+            <input type="text" class="form-control" name="company_name" id="company_name" placeholder="Enter Name of the Company">
+        </div>
+    </div>
+    <br>
+<input type="submit" value="Submit" class="btn" style="background-color: #4f868c; color: white; font-size: larger; width: 8rem;">
+</form>
+{% endblock %}

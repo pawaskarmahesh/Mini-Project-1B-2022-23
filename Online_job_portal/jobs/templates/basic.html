@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <title>{% block title %}{% endblock %}</title>
+  <style>
+    .navbar {
+      background-color: #4f868c;
+    }
+
+    .head1 {
+      color: #FBAD30;
+      font-size: 25px;
+      font-weight: bold;
+      height: 50px;
+    }
+
+    .head2 {
+      color: #EF4926;
+      font-size: 25px;
+      font-weight: bold;
+    }
+  </style>
+  {% block css %}
+  {% endblock %}
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg sticky-top navbar-dark sticky-top">
+      <a class="navbar-brand" href="/"><span class="head1"></span><span class="head2"></span></a>
+      <a class="navbar-brand" href="#"><span class="head1">Job</span><span class="head2">Portal</span></a>
+      <div class="container-fluid w-50">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          {% if not request.user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link {% block home %} {% endblock %}" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% block user_login %} {% endblock %}" href="/user_login/">User Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% block admin_login %} {% endblock %}" href="/admin_login/">Admin Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% block company_login %} {% endblock %}" href="/company_login/">Company Login</a>
+          </li>
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link active" href="/logout/">Logout</a>
+          </li>
+        </ul>
+        {% endif %}
+      </div>
+    </div>
+  </nav>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+  {% block body %}
+  {% endblock %}
+</body>
+{% block js %}
+{% endblock %}
+
+</html>

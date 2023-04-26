@@ -1,0 +1,34 @@
+{% extends 'company_navbar.html' %}
+
+{% block title %} All Applicants {% endblock %}
+{% block all_applicants %} active {% endblock %}
+{% block css %}
+{% endblock %}
+{% block body %}
+<div class="container mt-4">
+    <table class="table table-hover" id="example">
+        <thead>
+            <tr>
+                <th>Sr.No</th>
+                <th>Job Title</th>
+                <th>Applicant</th>
+                <th>Applied On</th>
+                <th>Resume</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in application %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{i.job}}</td>
+                <td>{{i.applicant}}</td>
+                <td>{{i.apply_date}}</td>
+                <td><a href="{{i.resume.url}}" class="btn"><i class="fa fa-file"></i></a></td>
+                <td><a href="#" class="btn"><i class="fa fa-trash"></i></a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+{% endblock %}

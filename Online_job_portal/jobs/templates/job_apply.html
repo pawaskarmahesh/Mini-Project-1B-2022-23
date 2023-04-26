@@ -1,0 +1,34 @@
+{% extends 'user_navbar.html' %}
+
+{% block title %} Resume Upload {% endblock %}
+{% block job_list %} active {% endblock %}
+{% block css %}
+{% endblock %}
+{% block body %}
+<div class="container mt-4 shadow-lg py-3 mb-4">
+<form method="POST" enctype="multipart/form-data"> {% csrf_token %}
+    <div class="form-row">
+        <label>Upload Resume</label>
+        <input type="file" class="form-control mt-3" name="resume" id="resume">
+    </div>
+    <input type="submit" value="Submit" class="btn btn-danger mt-3">
+</form>
+</div>
+{% endblock %}
+{% block js %}
+<script>
+    {% if alert %}
+    alert("Resume Submitted Successfully");
+    document.location = "/all_jobs/"
+    {% endif %}
+    {% if closed %}
+    alert("Date for applying has been closed")
+    document.location = "/all_jobs/"
+    {% endif %}
+    {% if notopen %}
+    alert("Date for applying has not yet started")
+    document.location = "/all_jobs/"
+    {% endif %}
+</script>
+{% endblock %}
+

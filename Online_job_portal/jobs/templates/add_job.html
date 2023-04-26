@@ -1,0 +1,71 @@
+{% extends 'company_navbar.html' %}
+
+{% block title %} Add Jobs {% endblock %}
+{% block add_job %} active {% endblock %}
+{% block css %}
+{% endblock %}
+{% block body %}
+<form class="container mt-3" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <div class="row">
+        <div class="form-group col-md-12">
+            <label>Job Title</label>
+            <input type="text" class="form-control" name="job_title" id="job_title" placeholder="Job Title" required>
+        </div>
+    </div>
+    
+    <div class="row mt-3">
+        <div class="form-group col-md-6">
+            <label>Start Date</label>
+            <input type="date" class="form-control" name="start_date" id="start_date" placeholder="Start Date" required>
+        </div>
+        <div class="form-group col-md-6">
+            <label>End Date</label>
+            <input type="date" class="form-control" name="end_date" id="end_date" placeholder="End Date" required>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="form-group col-md-6">
+            <label>Experience (in years)</label>
+            <input type="text" class="form-control" name="experience" id="experience" placeholder="Experience required (in years)" required>
+        </div>
+        <div class="form-group col-md-6">
+            <label>Salary (per month)</label>
+            <input type="tel" class="form-control" name="salary" id="salary" placeholder="Enter Salary (per month)" required>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="form-group col-md-12">
+            <label>Skills Required</label>
+            <input type="text" class="form-control" name="skills" id="skills" placeholder="Enter the required skills for the job" required>
+        </div>
+        </div>
+    
+    <div class="row mt-3">
+        <div class="form-group col-md-12">
+            <label>Company Location</label>
+            <input type="text" class="form-control" name="location" id="location" placeholder="Enter exact location of the Company" required>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="form-group col-md-12">
+            <label>Job Description</label>
+           <textarea name="description" id="description" class="form-control" cols="30" rows="4" placeholder="Description of the exact job" required></textarea>
+        </div>
+    </div>
+<input type="submit" value="Submit" class="btn mt-3" style="background-color: #4f868c; color: white; font-size: larger; width: 8rem;">
+</form>
+{% endblock %}
+{% block js %}
+<script>
+    {% if alert %}
+    alert("Job added successfully.")
+    window.location = "/job_list"
+    {% endif %}
+</script>
+{% endblock %}
+

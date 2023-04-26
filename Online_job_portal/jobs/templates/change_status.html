@@ -1,0 +1,34 @@
+{% extends 'admin_navbar.html' %}
+
+{% block title %} Admission System {% endblock %}
+{% block application_form %} active {% endblock %}
+{% block css %}
+{% endblock %}
+{% block body %}
+<form method="POST"> {% csrf_token %}
+    <div class="container mt-5">
+        <div class="mb-3">
+            <label for="username" class="form-label"><i style="font-weight: bold;">Company Name</i></label>
+            <input type="text" class="form-control" id="company_name" name="company_name" value="{{company.company_name}}">
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label"><i style="font-weight: bold;">Status</i></label>
+            <select name="status" id="status" class="form-control">
+                <option value="Accepted">Accept Company</option>
+                <option value="Rejected">Reject Company</option>
+            </select>
+        </div>
+        <br>
+        <input type="submit" value="Submit" class="btn" style="background-color: #4f868c; color: white;font-size: larger; width: 8rem;">
+
+    </div>
+</form>
+{% endblock %}
+{% block js %}
+<script>
+    {% if alert %}
+    alert("Status changed successfully.");
+    window.location.href = "/all_companies"
+    {% endif %}
+</script>
+{% endblock %}
