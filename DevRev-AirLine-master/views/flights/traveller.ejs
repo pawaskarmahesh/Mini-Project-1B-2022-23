@@ -1,0 +1,106 @@
+<% layout("layouts/boilerplate") %>
+
+  <div>
+    <div class="row">
+      <div class="col-12 col-md-8">
+        <div class="card traveller-card">
+          <form action="/traveller" method="post">
+            <div class="card-body">
+              <h1 class="text-light text-center">Traveller Details</h1>
+              <hr />
+              <br />
+              <br />
+              <% for (let index=0; index < detail.passengerCount; index++) { %>
+                <div class="traveller-details">
+                  <h3>Traveller <%= index+1 %>
+                  </h3>
+                  <hr />
+                  <div class="input-group mb-3" style="margin: 1.5rem 0">
+                    <div class="input-group-prepend" style="margin-right: 1rem">
+                      <div class="btn-group" role="group<%= index %>" aria-label="Basic radio toggle button group">
+                        <input type="radio" class="btn-check" name="group[<%= index %>]" id="group<%= index %>1"
+                          autocomplete="off" value="Mr." checked />
+                        <label class="btn btn-outline-secondary" for="group<%= index %>1">Mr.</label>
+
+                        <input type="radio" class="btn-check" name="group[<%= index %>]" id="group<%= index %>2"
+                          autocomplete="off" value="Ms." />
+                        <label class="btn btn-outline-secondary" for="group<%= index %>2">Ms.</label>
+                      </div>
+                    </div>
+                    <input type="text" class="form-control" placeholder="First Name" name="fname[<%= index %>]"
+                      autocomplete="off" required />
+                    <input type="text" class="form-control" placeholder="Last Name" name="lname[<%= index %>]"
+                      autocomplete="off" required />
+                  </div>
+                </div>
+                <% } %>
+                  <h1 class="text-light text-center">Payment Details</h1>
+                  <hr />
+                  <div class="traveller-details contact-details">
+                    <div class="input-group mb-3" style="margin: 1.5rem 0">
+                      <input type="number" class="form-control" placeholder="Mobile No." name="mobile"
+                        autocomplete="off" required style="border-color: black;" />
+                      <input type="email" class="form-control" placeholder="Email" name="email" autocomplete="off"
+                        required style="border-color: black;" />
+                    </div>
+                    <%- include("./payment.ejs") %>
+                  </div>
+                  <div class="text-center">
+                    <button type="submit" class="btn btn-dark rnt-btn">
+                      CONFIRM & PAY
+                    </button>
+                  </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4">
+        <div class="progress above-fare">
+          <div class="progress-bar bg-dark" role="progressbar" style="width: 90%" aria-valuenow="25" aria-valuemin="0"
+            aria-valuemax="100">
+            Confirm
+          </div>
+        </div>
+        <div class="card fare-card">
+          <div class="card-header">
+            <h2>Fare Summary</h2>
+          </div>
+          <div class="card-body">
+            <h4>
+              <div class="row">
+                <div class="col-8">Base Fare</div>
+                <div class="col-4 text-right">₹<%= detail.price - 489 %>
+                </div>
+              </div>
+              <hr />
+              <div class="row">
+                <div class="col-8">Fee & Taxes</div>
+                <div class="col-4 text-right">₹420</div>
+              </div>
+              <hr />
+              <div class="row">
+                <div class="col-8">Other Charges</div>
+                <div class="col-4 text-right">₹69</div>
+              </div>
+            </h4>
+          </div>
+          <div class="card-footer">
+            <h2>
+              <div class="row">
+                <div class="col">
+                  Total Fare
+                  <h5 style="margin-bottom: 0">
+                    (₹<%= detail.price %> X <%= detail.passengerCount %>)
+                  </h5>
+                </div>
+                <div class="col text-right">
+                  ₹<%= detail.price*detail.passengerCount %>
+                </div>
+              </div>
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,78 @@
+<% layout("layouts/boilerplate") %>
+
+<div>
+  <div class="card bg-transparent big-list-card">
+    <div class="card-body">
+      <h1>Bookings</h1>
+      <hr />
+      <br />
+
+      <% if (!details || details.length == 0) { %>
+      <br />
+      <br />
+      <div class="no-bookings">
+        <hr />
+        <h1>No Bookings</h1>
+        <hr />
+      </div>
+      <% } %> <% for (let detail of details) { %>
+      <div class="card border-dark list-card">
+        <div class="card-body">
+          <h3 class="card-title">
+            <div class="row">
+              <div class="col"><%= detail.from %> -> <%= detail.to %></div>
+              <div class="col text-right">
+                <% if(detail.isPaid) {%>
+                <a
+                  href="/boarding-pass/<%= detail._id %>"
+                  class="btn btn-outline-dark"
+                  style="width: 8rem"
+                  >VIEW</a
+                >
+                <% } %>
+                <a
+                  href="/cancel/<%= detail._id %>"
+                  class="btn btn-outline-danger"
+                  style="width: 8rem"
+                  >CANCEL</a
+                >
+              </div>
+            </div>
+          </h3>
+          <h6><%= detail.date %></h6>
+          <hr />
+          <h5>
+            <div class="row">
+              <div class="col">
+                <i class="fas fa-plane-departure"></i>
+                <br />
+                <%= detail.fromTime %>
+                <br />
+                <%= getCity(detail.from) %>
+              </div>
+              <div class="col">
+                <i class="fas fa-plane-arrival"></i>
+                <br />
+                <%= detail.toTime %>
+                <br />
+                <%= getCity(detail.to) %>
+              </div>
+              <div class="col-lg-4 col-sm-6 text-center">
+                <br />
+                <b><%= detail.airline %></b>
+                <br />
+                <% if (detail.passengers.length > 1) { %> <%= detail.group %> |
+                <%= detail.passengers.length %> Travellers <% } else { %> <%=
+                detail.group %> | <%= detail.passengers.length %> Traveller <% }
+                %>
+              </div>
+              <div class="col"></div>
+            </div>
+          </h5>
+        </div>
+      </div>
+      <br />
+      <% } %>
+    </div>
+  </div>
+</div>

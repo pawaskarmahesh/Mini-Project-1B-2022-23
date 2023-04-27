@@ -1,0 +1,61 @@
+<% layout("layouts/boilerplate") %>
+
+<% for (let passenger of bookingDetail.passengers) { %>
+	<div>
+		<div class="card text-white bg-dark details-card">
+			<div class="card-header">
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							<h1 style="font-size: 4rem; margin: 0 0 0 1rem;"><i class="fas fa-fighter-jet"></i></h1>
+						</div>
+						<div class="col"></div>
+						<div class="col">
+							<h1>Boarding Pass</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="card-body">
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							<br>
+							<h4 class="card-text">Name</h4>
+							<h2 class="card-title"><b><%= passenger %></b></h2>
+							<br>
+							<br>
+							<h4 class="card-text">FROM</h4>
+							<h2 class="card-title"><b><%= getCity(bookingDetail.from) %></b></h2>
+							<br>
+							<br>
+							<h4 class="card-text">TO</h4>
+							<h2 class="card-title"><b><%= getCity(bookingDetail.to) %></b></h2>
+						</div>
+						<div class="col">
+							<br>
+							<h4 class="card-text text-dark">lorem</h4>
+							<h2 class="card-title text-dark mq"><b>ipsum</b></h2>
+							<br>
+							<br>
+							<h4 class="card-text">CARRIER</h4>
+							<h2 class="card-title"><b><%= bookingDetail.airline %></b></h2>
+							<br>
+							<br>
+							<h4 class="card-text">DATE</h4>
+							<h2 class="card-title"><b><%= bookingDetail.date %></b></h2>
+						</div>
+						<div class="col">
+							<br>
+							<img src="/images/qr.png" alt="QR Code" style="height: 63%;">
+							<br>
+							<br>
+							<h4 class="card-text">TIME</h4>
+							<h2 class="card-title"><b><%= bookingDetail.fromTime %></b></h2>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<% } %>

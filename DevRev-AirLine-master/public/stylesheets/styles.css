@@ -1,0 +1,439 @@
+
+
+body {
+  background: url(/images/airplane2.jpg)center fixed;
+
+  background-color: #e3e3e3;
+  overflow-x: hidden !important;
+  font-family: "Karla", sans-serif; 
+}
+
+.plane {
+  margin: 0 10px;
+}
+
+.progress {
+  height: 20px; 
+  width: 13rem;
+}
+
+
+
+
+/******* Navbar *******/
+
+
+nav {
+  min-height: 5rem;
+  padding: 0 2.5rem 0 5rem;
+}
+
+.nav-ul {
+  position: relative; 
+  left: 50px;  
+}
+
+.nav-list i {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+
+.nav-list {
+  margin: 0 1rem;
+}
+
+.nav-list a:hover {
+  color: #3d84b8 !important;
+}
+
+.auth-btn {
+  margin: 0 0.5rem;
+  width: 6rem;
+}
+
+.logo {
+  margin: 0; 
+  font-size: 3rem; 
+  font-family: "Kanit", sans-serif;
+}
+
+
+
+
+/******* Index Page *******/
+
+
+.index-input {
+  height: 5rem;
+}
+
+.center {
+  margin: auto;
+  width: 80%;
+  padding: 1.8rem;
+  position: relative;
+  top: 9rem;
+  background-color: #f7f7f7;
+  border-radius: 25px;
+}
+
+.heading-label {
+  background-color: #000000 !important;
+  color: #f7f7f7;
+}
+
+.button {
+  margin: 1.5rem auto 0;
+  display:block;
+}
+
+.bt {
+  padding: 1.5rem 0 0 0;
+}
+
+
+
+
+/******* Search Page *******/
+
+
+.above-search {
+  margin: 8rem 0 0 5rem;
+  display: inline-flex;
+}
+
+.above-search .progress {
+  margin-top: 0.6rem;
+  margin-left: 23rem;
+}
+
+.left-card {
+  margin: 0 3rem;
+  width: 80%;
+  height: 60%;
+  padding: 1.8rem;
+  position: fixed;
+  top: 12rem;
+  border-radius: 25px;  
+}
+
+.right-card {
+  margin: 0 5rem;
+  width: 80%;
+  padding: 1rem;
+  position: relative;
+  top: 1rem;
+  border-radius: 25px;  
+}
+
+
+
+
+/******* Review Page *******/
+
+
+.review-card {
+  margin: 0 3rem;
+  width: 100%;
+  padding: 1rem;
+  top: 8rem;
+  border-radius: 25px;
+}
+
+
+
+
+/**** Review & Traveller Page ****/
+
+
+.above-fare {
+  margin: 8rem 0 0 11rem;
+}
+
+.fare-card {
+  margin: 0 0 0 4rem;
+  width: 80%;
+  padding: 0rem;
+  top: 1rem;
+  border-radius: 10px; 
+}
+
+.rnt-btn {
+  width: 15rem; 
+  height: 3rem; 
+  line-height: 2rem;
+}
+
+
+
+
+/******* Traveller Page *******/
+
+
+.traveller-card {
+  margin: 0 2rem;
+  width: 100%;
+  padding: 1rem;
+  top: 8rem;
+  border: none;
+  background-color: #bbbbbb;
+  border-radius: 10px;
+}
+
+.traveller-details {
+  margin-bottom: 1rem; 
+  border: 1.5px solid;
+  border-radius: 20px;
+  padding: 2rem;
+  background-color: #fff;
+}
+
+.traveller-details hr{
+  border-top: 1.5px dashed; 
+  background-color: #cdd0cb;
+}
+
+.traveller-details input[type="text"] {
+  background-color: #fff; 
+  border: 1.5px solid #808588;
+}
+
+.contact-details {
+  margin: 5rem 0 3rem;
+  background-color: #e3e3e3;
+}
+
+.contact-details input {
+  border-radius: 20px;
+  background-color: #e3e3e3;
+  border: 1.5px solid #fff;
+}
+
+.contact-details input[type="number"]::-webkit-outer-spin-button,
+.contact-details input[type="number"]::-webkit-inner-spin-button {   
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0; 
+}
+
+
+
+
+/******* Bookings Page *******/
+
+
+.big-list-card {
+  margin: 0 auto;
+  width: 95%;
+  padding: 3rem;
+  top: 5rem;
+  background-color: #cccccc !important;
+  border-radius: 20px; 
+  min-height: 70rem;
+  border: none !important;
+} 
+
+.list-card {
+  margin: 0 auto;
+  width: 85%;
+  padding: 2rem;
+  top: 10rem;
+  transform: translateY(-50%);
+  border-radius: 20px; 
+}
+
+.no-bookings {
+  color: #ce1212;
+  text-align: center;
+}
+
+.no-bookings hr {
+  border-top: 3px dashed #be0000; 
+  background-color: #fff;
+}
+
+
+
+
+/******* Boarding Pass & Cancel Page *******/
+
+
+.details-card {
+  margin: 4rem auto 0;
+  width: 70%;
+  padding: 2rem;
+  top: 4rem;
+  border-radius: 30px;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.details-card button {
+  width: 15rem; 
+  height: 3rem;
+}
+
+.password-input {
+  text-align: center; 
+  background-color: #ff8585; 
+  border: none;
+}
+
+
+
+
+/******* FOOTER *******/
+
+
+footer{
+  margin: 20rem 0 0;
+  padding-top: 40px;
+} 
+
+.socials {
+  margin: 20rem 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0 2rem 0;
+}
+.socials li {
+  margin: 0 10px;
+}
+
+.socials a i {
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+.socials a:hover i {
+  color: #ff8585;
+}
+
+.footer-bottom{
+  padding: 0 0 30px 35px;
+  text-align: center;
+  word-spacing: 2px;
+}
+
+
+@media only screen and (max-width: 600px) {
+    
+  html, body {
+    overflow-x: hidden !important;
+  }
+
+  .progress {
+    display: none;
+  }
+
+
+  /******* Navbar *******/
+
+  .nav-ul i { 
+    text-align: left;
+  }
+
+  .nav-ul {
+    margin-bottom: 1.5rem;
+  }
+
+  .d-flex .btn-dark {
+    display: none;
+  }
+
+
+  /******* Index Page *******/
+
+  .center {
+    width: 99%;
+  }
+
+  .center .input-group {
+    display: inline-block;
+    align-items: center;
+  }
+
+  .center .form-control {
+    width: 100%;
+  }
+
+
+  /******* Search Page *******/
+
+  .left-card {
+    display: none;
+  }
+
+  .right-card {
+    top: 3rem;
+    margin: auto;
+  }
+
+
+  /******* Review Page *******/
+
+  .review-card {
+    margin: 0 2.5rem;
+    width: 85%;
+    padding: 1rem;
+    text-align: left !important;
+  }
+  
+
+  /**** Review & Traveller Page ****/
+
+  .fare-card {
+    top: 13rem;
+    left: 20%;
+    margin: 0 auto;
+    width: 170%;
+  }
+
+
+  /******* Traveller Page *******/
+
+  .traveller-card {
+    margin: 0;
+  }
+
+  .traveller-card input {
+    margin-top: 1rem;
+    width: 100% !important;
+    border-radius: 0px;
+  }
+  
+
+  /******* Bookings Page *******/
+
+  .list-card {
+    margin-right: 20rem;
+    width: 110%;
+    padding: 0.5rem;
+    top: 15rem;
+  }
+
+  .list-card a {
+    margin-bottom: 1rem;
+  }
+
+  
+  /******* Boarding Pass & Cancel Page *******/
+
+  .mq::after { 
+    content: "\a";
+    white-space: pre;
+    display: block;
+  }
+
+  .details-card {
+    width: 95%;
+  }
+
+  .details-card button {
+    width: 100%; 
+    height: 4rem;
+  }
+
+}

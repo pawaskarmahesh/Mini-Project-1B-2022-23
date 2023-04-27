@@ -1,0 +1,70 @@
+<% layout("layouts/boilerplate") %>
+
+<% for (let index = 0; index < bookingDetail.passengers.length; index++) { %>
+    <form action="/cancel/<%= bookingDetail._id %>/<%= index %>" method="post">
+	<div>
+		<div class="card text-dark bg-light details-card">
+			<div class="card-body">
+				<div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <h1>Flight Details</h1>
+                        </div>
+                        <div class="col"></div>
+                        <div class="col text-right">
+							<button class="btn btn-danger text-center">CANCEL BOOKING</button>        
+                        </div>
+                    </div>
+			    </div>
+                <hr>
+            </div>
+			<div class="card-body text-center">
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							<br>
+							<h4 class="card-text">Name</h4>
+							<h2 class="card-title"><b><%= bookingDetail.passengers[index] %></b></h2>
+							<br>
+							<br>
+							<h4 class="card-text">CARRIER</h4>
+							<h2 class="card-title"><b><%= bookingDetail.airline %></b></h2>
+							<br>
+							<br>
+							<h4 class="card-text">CLASS</h4>
+							<h2 class="card-title"><b><%= bookingDetail.group %></b></h2>
+						</div>
+						<div class="col">
+							<br>
+							<h4 class="card-text text-dark">FROM</h4>
+							<h2 class="card-title text-dark mq"><b><%= getCity(bookingDetail.from) %></b></h2>
+							<br>
+							<br>
+							<h4 class="card-text">TO</h4>
+							<h2 class="card-title"><b><%= getCity(bookingDetail.to) %></b></h2>
+							<br>
+							<br>
+							<h4 class="card-text">DATE</h4>
+							<h2 class="card-title"><b><%= bookingDetail.date %></b></h2>
+						</div>
+						<div class="col">
+							<br>
+							<h4 class="card-text">FROM TIME</h4>
+							<h2 class="card-title"><b><%= bookingDetail.fromTime %></b></h2>
+							<br>
+							<br>
+							<h4 class="card-text">TO TIME</h4>
+							<h2 class="card-title"><b><%= bookingDetail.toTime %></b></h2>
+							<br>
+							<br>
+							<h4 class="card-text" style="color: #ff4646;"><b>Enter Password</b></h4>
+                            <input type="password" class="password-input" name="password" required>
+                            <input type="hidden" name="username" value="<%= currentUser.username %>">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</form>
+<% } %> 

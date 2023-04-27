@@ -1,0 +1,45 @@
+<% let date=new Date(); date.setDate(date.getDate() + 1); date=date.toLocaleDateString("en-GB", {month: "2-digit"
+  ,day: "2-digit" ,year: "numeric" }).split("/").join(".") %>
+  <link rel="icon" type="image/png" sizes="180x180" href="/images/icon.png" />
+  <div class="card-body"></div>
+  <div class="container">
+    <div class="row">
+      <div class="mx-auto col-md-11">
+        <div class="card p-3">
+          <h6 class="text-uppercase">Pay with card</h6>
+          <div class="inputbox mt-3">
+            <input type="text" name="userName" class="form-control" required="required" autocomplete="off"
+              style="border-radius: 0" />
+            <span>Name on card</span>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="inputbox mt-3 mr-2">
+                <input type="number" name="cardNumber" class="form-control" required="required" autocomplete="off"
+                  placeholder="XXXX-XXXX-XXXX-XXXX" style="border-radius: 0" />
+                <i class="fa fa-credit-card"></i> <span>Card Number</span>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="d-flex flex-row">
+                <div class="inputbox mt-3 mr-2">
+                  <input type="text" class="form-control" id="datepicker" aria-label="date" name="date" value="<%= date %>
+                autocomplete=" off" required style="border-radius: 0;" />
+                  <span>Expiry</span>
+                </div>
+                <div class="inputbox mt-3 mr-2">
+                  <input type="number" name="cvvData" class="form-control" required="required" autocomplete="off"
+                    placeholder="XXX" style="border-radius: 0;" />
+                  <span>CVV</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-4 mb-4 d-flex justify-content-between">
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="/scripts/datePicker.js"></script>

@@ -1,0 +1,28 @@
+{
+  "name": "devrev-airline-management-system",
+  "version": "1.0.0",
+  "description": "DevRev Airline Management Application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Arijit Sarkar",
+  "license": "ISC",
+  "dependencies": {
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^4.6.0",
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.8",
+    "ejs-mate": "^4.0.0",
+    "express": "^4.18.2",
+    "express-mongo-sanitize": "^2.2.0",
+    "express-session": "^1.17.3",
+    "helmet": "^6.0.1",
+    "lodash": "^4.17.21",
+    "mongoose": "^6.8.2",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^7.1.2",
+    "stripe": "^11.6.0"
+  }
+}

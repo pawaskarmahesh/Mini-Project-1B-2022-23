@@ -1,0 +1,75 @@
+<% layout("layouts/boilerplate") %>
+
+<div>
+	<div class="row">
+		<div class="col-6 col-md-4">
+			<div class="card text-white bg-dark left-card" style="max-width: 25rem;">
+				<div class="card-header">Details</div>
+				<div class="card-body">
+					<h4 class="card-title"><%= details[0].from %></h4>
+					<h4 class="card-title"><%= details[0].to %></h4>
+					<h4 class="card-title"><%= details[0].date %></h4>
+					<h5 class="card-title"><%= details[0].group %></h5>
+					<% if (details[0].passengerCount > 1) { %>
+						<h5 class="card-title"><%= details[0].passengerCount %> Travellers</h5>
+					<% } else { %>
+						<h5 class="card-title"><%= details[0].passengerCount %> Traveller</h5>						
+					<% } %> 
+					<div class="card-footer text-muted text-center">
+						<a href="/" class="btn btn-outline-light button">Back</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-12 col-md-8">
+			
+			<div class="above-search">
+				<div class="btn-group">
+					<button type="button" class="btn btn-dark">Sort By</button>
+					<button type="button" class="btn btn-dark dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<span class="sr-only">Toggle Dropdown</span>
+					</button>
+					<ul class="dropdown-menu">
+					<li><a class="dropdown-item" href="/search?sortby=ao">Alphabetical Order</a></li>
+					<li><a class="dropdown-item" href="/search?sortby=duration">Duration</a></li>
+					<li><a class="dropdown-item" href="/search?sortby=price">Price</a></li>
+					</ul>
+				</div>
+				<div class="progress">
+					<div class="progress-bar bg-dark" role="progressbar" style="width: 30%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">Search</div>
+				</div>
+			</div>
+
+			<% for (let detail of details) { %> 
+				<form action="/search" method="post">		
+					<div class="card right-card">
+						<div class="card-body">
+							<h4 class="card-title">
+								<div class="row">
+									<div class="col">
+										<%= detail.airline %>			
+									</div>	
+									<div class="col text-center">
+										<%= detail.fromTime %><span class="fas fa-plane plane"></span><%= detail.toTime %>								
+									</div>
+									<div class="col text-right">
+										₹ <%= detail.price - 489 %>
+									</div>
+								</div>
+							</h4>
+						</div>
+						<input type="hidden" name="detail" value="<%= JSON.stringify(detail) %>" />
+						<div class="card-footer text-muted text-center">
+							<button type="submit" class="btn btn-outline-dark">BOOK NOW</button>
+						</div>
+					</div>
+				</form>
+				<br>
+			<% } %>
+			
+		</div>
+	</div>
+</div>
+
+<script src="/scripts/stable.js"></script>
