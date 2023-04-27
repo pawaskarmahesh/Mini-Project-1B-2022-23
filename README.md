@@ -1,6 +1,7 @@
-# Sign Language Interpreter using Google Teachable Machine
-Created by:<br>
-<h3> Chirag Sawant<br>
-Omkar Yadav<br>
-Adrian Gilbert<br>
-Sanjita Shukla<br>
+# Vehicle Parking Management System
+
+# <b>Created By: <br>
+
+  Harshal Deshmukh <br>
+  Aryan Bane <br>
+  Milind Chavan <br>
